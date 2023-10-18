@@ -1,12 +1,13 @@
 import React from 'react';
 import '../styles/Header.css';
 import { useDispatch } from 'react-redux';
+import { changeTopic } from '../redux/topicSlice'; 
 
 function Header() {
     const dispatch = useDispatch();
     
     const handleButtonClick = (topic) => {
-        alert(`Has hecho click en el tópico ${topic}`);
+        dispatch(changeTopic(topic));
     };
 
     return (
