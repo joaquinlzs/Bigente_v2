@@ -1,10 +1,10 @@
 import { configureStore } from "@reduxjs/toolkit";
-// import postsReducer from "./postsSlice"; 
+import topicReducer from './topicSlice';
 
 
 const store = configureStore({
   reducer: {
-    //posts: postsReducer,
+    topic: topicReducer,
   },
 });
 
