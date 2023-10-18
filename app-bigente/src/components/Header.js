@@ -20,9 +20,9 @@ function Header() {
             <nav className="navbar">
                 <ul className="nav-list">
                     <li><button onClick={() => handleButtonClick("Chile")}>Chile</button></li>
-                    <li><button onClick={() => handleButtonClick("Energía")}>Energía</button></li>
+                    <li><button onClick={() => handleButtonClick("Energia")}>Energía</button></li>
                     <li><button onClick={() => handleButtonClick("Derecho")}>Derecho</button></li>
-                    <li><button onClick={() => handleButtonClick("Psicología")}>Psicología</button></li>
+                    <li><button onClick={() => handleButtonClick("Psicologia")}>Psicología</button></li>
                 </ul>
             </nav>
         </header>
