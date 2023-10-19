@@ -2,10 +2,25 @@ import React from 'react';
 import '../styles/Header.css';
 import { useDispatch } from 'react-redux';
 import { changeTopic } from '../redux/topicSlice'; 
+import sourceListChile from "../data/sourceListChile.json";
+import sourceListEnergia from "../data/sourceListEnergia.json";
+import fetchData from "../utility/fetchData";
 
 function Header() {
     const dispatch = useDispatch();
+    
     const handleButtonClick = async (topic) => {
+        const sourceLists = {
+            "Chile": sourceListChile,
+            "Energia": sourceListEnergia
+        };
+        const allPostsOfTopic = [];
+        const selectedSourceList = sourceLists[topic];
+        if (selectedSourceList) {
+            const links = Object.keys(selectedSourceList).map((id) => fetchData(selectedSourceList[id]));
+            console.log(links)
+        }
+        // Se debe despachar la data lista
         dispatch(changeTopic(topic));
     };
 
