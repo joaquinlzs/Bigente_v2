@@ -1,5 +1,4 @@
 async function fetchData(objectSourceList) {
-    const name = objectSourceList.name;
     const type = objectSourceList.type;
     let rawData;
     let prettyData;
@@ -28,9 +27,8 @@ async function fetchData(objectSourceList) {
             date: item.data.created,
         }));
         
-        console.log(name)
-        console.log(prettyData)
-        console.log("----")
+        //console.log(prettyData)
+        return prettyData;
     }
 
 }
