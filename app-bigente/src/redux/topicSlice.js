@@ -16,7 +16,6 @@ const topicSlice = createSlice({
             const selectedSourceList = sourceLists[action.payload];
             if (selectedSourceList) {
                 const links = Object.keys(selectedSourceList).map((id) => fetchData(selectedSourceList[id]));
-                console.log(links);
             } else {
                 return [action.payload];
             }
