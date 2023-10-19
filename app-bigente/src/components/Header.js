@@ -20,23 +20,13 @@ function Header() {
             const idsSourceList = Object.keys(selectedSourceList);
             const sourcesTopic = idsSourceList.map(id => selectedSourceList[id]);
             const dataPromises = sourcesTopic.map(source => fetchData(source));
-            //console.log(dataPromises)
             try {
-                const data = await Promise.all(dataPromises);
-                allDataTopic.push(...data);
-                console.log(allDataTopic)
+                const dataArrays = await Promise.all(dataPromises);
+                console.log(dataArrays)
             } catch (error) {
-                //console.log(error);
+                console.log(error)
             }
-            //sourcesTopic.forEach(source => allDataTopic.push(fetchData(source))
         }
-
-
-
-
-
-
-        //console.log(selectedSourceList)
         dispatch(changeTopic(topic));
     };
 
