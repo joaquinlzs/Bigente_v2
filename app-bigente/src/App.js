@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux';
 
 function App() {
 const selectedTopic = useSelector((state) => state.topic)
-console.log(selectedTopic)
+//console.log(selectedTopic)
 
   return (
     <div className="App">

@@ -2,10 +2,41 @@ import React from 'react';
 import '../styles/Header.css';
 import { useDispatch } from 'react-redux';
 import { changeTopic } from '../redux/topicSlice'; 
+import sourceListChile from "../data/sourceListChile.json";
+import sourceListEnergia from "../data/sourceListEnergia.json";
+import fetchData from "../utility/fetchData";
 
 function Header() {
     const dispatch = useDispatch();
+
     const handleButtonClick = async (topic) => {
+        const allDataTopic = [];
+        const sourceLists = {
+            "Chile": sourceListChile,
+            "Energia": sourceListEnergia
+        };
+        const selectedSourceList = sourceLists[topic];
+        if (selectedSourceList) {
+            const idsSourceList = Object.keys(selectedSourceList);
+            const sourcesTopic = idsSourceList.map(id => selectedSourceList[id]);
+            const dataPromises = sourcesTopic.map(source => fetchData(source));
+            //console.log(dataPromises)
+            try {
+                const data = await Promise.all(dataPromises);
+                allDataTopic.push(...data);
+                console.log(allDataTopic)
+            } catch (error) {
+                //console.log(error);
+            }
+            //sourcesTopic.forEach(source => allDataTopic.push(fetchData(source))
+        }
+
+
+
+
+
+
+        //console.log(selectedSourceList)
         dispatch(changeTopic(topic));
     };
 
