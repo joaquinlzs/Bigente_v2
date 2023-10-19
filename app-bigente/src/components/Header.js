@@ -10,7 +10,6 @@ function Header() {
     const dispatch = useDispatch();
 
     const handleButtonClick = async (topic) => {
-        const allDataTopic = [];
         const sourceLists = {
             "Chile": sourceListChile,
             "Energia": sourceListEnergia
@@ -19,10 +18,10 @@ function Header() {
         if (selectedSourceList) {
             const idsSourceList = Object.keys(selectedSourceList);
             const sourcesTopic = idsSourceList.map(id => selectedSourceList[id]);
-            const dataPromises = sourcesTopic.map(source => fetchData(source));
+            const dataPromises = sourcesTopic.map(source => (fetchData(source)));
             try {
                 const dataArrays = await Promise.all(dataPromises);
-                console.log(dataArrays)
+                const allDataTopic = [].concat(...dataArrays);
             } catch (error) {
                 console.log(error)
             }
