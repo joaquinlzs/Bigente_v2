@@ -27,7 +27,6 @@ async function fetchData(objectSourceList) {
             date: item.data.created,
         }));
         
-        //console.log(prettyData)
         return prettyData;
     }
 

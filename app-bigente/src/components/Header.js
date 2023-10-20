@@ -27,7 +27,7 @@ function Header() {
                 console.log(error)
             }
         } else {
-            console.log(topic)
+            //console.log(topic)
             dispatch(changeTopic([topic]));
         }
     };
