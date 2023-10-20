@@ -8,7 +8,6 @@ function App() {
   const [testTitles, setTestTitles] = useState("Cargando...");
 
   useEffect(() => {
-    // Si aun no se carga topico
     if (!selectedTopic) {
       setTestTitles("Selecciona un tema")
     } else if (selectedTopic.length > 1) {
