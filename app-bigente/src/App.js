@@ -4,13 +4,13 @@ import { useSelector } from 'react-redux';
 
 function App() {
 const selectedTopic = useSelector((state) => state.topic)
-//console.log(selectedTopic)
+console.log(selectedTopic[0])
 
   return (
     <div className="App">
       <Header />
       <div>
-        {selectedTopic}
+        {selectedTopic[0].map(item => item.title)}
       </div>
     </div>
     

@@ -22,15 +22,14 @@ function Header() {
             try {
                 const dataArrays = await Promise.all(dataPromises);
                 const allDataTopic = [].concat(...dataArrays);
-                console.log(allDataTopic)
-                //dispatch(changeTopic(allDataTopic));
+                //console.log(allDataTopic)
+                dispatch(changeTopic(allDataTopic));
             } catch (error) {
                 console.log(error)
             }
         } else {
             console.log(topic)
         }
-        dispatch(changeTopic(topic));
     };
 
     return (
