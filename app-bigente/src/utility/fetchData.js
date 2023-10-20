@@ -19,6 +19,7 @@ async function fetchData(objectSourceList) {
         }
 
         prettyData = rawData.map((item) => ({
+            id: item.data.id,
             title: item.data.title,
             score: item.data.score,
             subreddit: item.data.subreddit,

@@ -4,7 +4,7 @@ import Tag from './Tag';
 import tiempoPasadoHastaHoy from '../utility/dateUnix';
 import getCardSize from '../utility/cardSize';
 
-function Card({ title, subreddit, selftext, score, thumbnail, permalink, tags, created }) {
+function Card({ title, subreddit, selftext, score, permalink, tags, created }) {
     const [flipped, setFlipped] = useState(false);
     const hasSelftext = selftext && selftext.trim().length > 0;
 
