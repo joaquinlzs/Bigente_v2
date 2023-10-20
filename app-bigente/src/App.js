@@ -4,19 +4,17 @@ import { useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 
 function App() {
-  const selectedTopic = useSelector((state) => state.topic)
-  const [testTitles, setTestTitles] = useState("cargando...");
+  const selectedTopic = useSelector((state) => state.topic[0])
+  const [testTitles, setTestTitles] = useState("Cargando...");
 
   useEffect(() => {
     // Si aun no se carga topico
-    if (selectedTopic.length === 0) {
+    if (!selectedTopic) {
       setTestTitles("Selecciona un tema")
-    // Si el topico tiene sourceList
-    } else if (selectedTopic.length === 1 & selectedTopic[0].length > 1) {
-      setTestTitles(selectedTopic[0].map(item => item.title))
-    // Si el topico NO tiene sourcelist
-    } else if (selectedTopic.length === 1 & selectedTopic[0].length === 1) {
-      setTestTitles(selectedTopic[0])
+    } else if (selectedTopic.length > 1) {
+      setTestTitles(selectedTopic.map(item => item.title))
+    } else if (selectedTopic.length === 1) {
+      setTestTitles(selectedTopic)
     }
   }, [selectedTopic])
 
