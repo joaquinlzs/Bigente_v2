@@ -4,7 +4,7 @@ import Tag from './Tag';
 import tiempoPasadoHastaHoy from '../utility/dateUnix';
 import getCardSize from '../utility/cardSize';
 
-function Card({ title, subreddit, selftext, score, permalink, tags, created }) {
+function Card({ title, subreddit, selftext, score, permalink, created }) {
     const [flipped, setFlipped] = useState(false);
     const hasSelftext = selftext && selftext.trim().length > 0;
 
@@ -39,9 +39,7 @@ function Card({ title, subreddit, selftext, score, permalink, tags, created }) {
                     </h5>
                     </div>
                 <div className="label">
-                    {tags.map(tag => (
-                        <Tag text={tag} color={"gray"}/>
-                    ))}
+                    <Tag text={"CO2"} color={"gray"}/>
                 </div>
                 <div className="footer">
                     <div className="date">

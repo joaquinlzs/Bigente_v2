@@ -1,5 +1,5 @@
 function randomTags() {
-    const listaTags = ["PV", "Eólico", "Litio", "Gx", "Dx", "Tx", "ERNC", "SSCC", "EV"];
+    /*const listaTags = ["PV", "Eólico", "Litio", "Gx", "Dx", "Tx", "ERNC", "SSCC", "EV"];
     const cantidad = Math.floor(Math.random() * 1) + 1;
     const tagsAleatorios = [];
 
@@ -9,10 +9,9 @@ function randomTags() {
             tagsAleatorios.push(tagAleatorio);
         }
     }
-
-    return tagsAleatorios;
+    */
+    //return tagsAleatorios;
+    return (["Litio"])
 }
-
-//console.log(randomTags())
 
 export default randomTags;
