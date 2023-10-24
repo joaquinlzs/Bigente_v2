@@ -30,7 +30,7 @@ function App() {
     } else if (selectedTopic.length === 1) {
       setTestTitles(selectedTopic)
     }
-  }, [selectedTopic])
+  }, [selectedTopic, testTitles])
 
   return (
     <div className="App">
